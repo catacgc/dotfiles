@@ -1,0 +1,27 @@
+" Set color scheme here
+set t_Co=256
+
+" No folds
+set nofoldenable
+
+" No numbers
+set nonumber
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>"
+
+" Mappings
+map <Leader>b :CtrlPBuffer<cr>
+map <Leader>o :FufFile<cr>
+map <Leader>e :CtrlPMRUFile<cr>
+map <Leader>l :CtrlPBufTag<cr>
+map <Leader>L :CtrlPBufTagAll<cr>
+map <Leader>p :CtrlP<cr>
+map <Leader>tt :TagbarOpenAutoClose<cr>
+set pastetoggle=<F2>                        " toggle list mode
+
+" Save a read only file using sudo tee %
+cnoreabbrev <expr> w!!
+                \((getcmdtype() == ':' && getcmdline() == 'w!!')
+                \?('!sudo tee % >/dev/null'):('w!!'))
