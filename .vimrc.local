@@ -1,8 +1,9 @@
 " Set color scheme here
-set t_Co=256
+color desert
 
 " No folds
 set nofoldenable
+set nocursorline
 
 " No numbers
 set nonumber
