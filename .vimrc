@@ -56,7 +56,8 @@ Bundle 'gmarik/vundle'
     set viewoptions=options,cursor,unix,slash " better unix / windows compatibility
     set virtualedit=onemore         " allow for cursor beyond last character
     set history=1000                " Store a ton of history (default is 20)
-    set spell                       " spell checking on
+    set nospell                     " spell checking on
+    set nofoldenable
     set hidden                      " allow buffer switching without saving
 
     scriptencoding utf-8
