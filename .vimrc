@@ -48,7 +48,6 @@ Bundle 'gmarik/vundle'
     endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " syntax highlighting
-    set mouse=a                 " automatically enable mouse usage
     autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
     " always switch to the current file directory.
 
