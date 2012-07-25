@@ -32,8 +32,8 @@ Bundle 'gmarik/vundle'
     " PHP
     Bundle 'spf13/PIV' 
     " Python
-    Bundle 'klen/python-mode'
-    Bundle 'python.vim'
+    " Bundle 'klen/python-mode'
+    " Bundle 'python.vim'
     Bundle 'python_match.vim'
     Bundle 'pythoncomplete'
 " }
@@ -126,12 +126,11 @@ Bundle 'gmarik/vundle'
                 \((getcmdtype() == ':' && getcmdline() == 'w!!')
                 \?('!sudo tee % >/dev/null'):('w!!'))
 
-    " Stupid shift key fixes
-    cmap W w
-    cmap WQ wq
-    cmap wQ wq
-    cmap Q q
-    cmap Tabe tabe
+    " Fast replace word under cursor
+    nmap <Leader>rr wbve"sy:%s/<C-R>=substitute(@s,"\n",'\\n','g')<CR>/
+
+    " Highlight word under cursor
+    nmap <Leader>cc wbve"sy:%s/<C-R>=substitute(@s,"\n",'\\n','g')<CR>//n<CR>
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
@@ -139,7 +138,6 @@ Bundle 'gmarik/vundle'
     "clearing highlighted search
     nmap <silent> <leader>/ :nohlsearch<CR>
 
-    " Shortcuts
     " Change Working Directory to that of the current file
     cmap cwd lcd %:p:h
     cmap cd. lcd %:p:h
@@ -168,6 +166,10 @@ Bundle 'gmarik/vundle'
         let g:NERDShutUp=1
         let b:match_ignorecase = 1
     " }
+
+    " PIV {
+        let g:DisableAutoPHPFolding = 1 
+    "}
 
     " OmniComplete {
         if has("autocmd") && exists("+omnifunc")
@@ -225,8 +227,15 @@ Bundle 'gmarik/vundle'
 
     " ctrlp {
         let g:ctrlp_working_path_mode = 2
+        let g:ctrlp_dotfiles = 0
+        let g:ctrlp_root_markers = ['.project']
+
         nnoremap <silent> <D-t> :CtrlP<CR>
         nnoremap <silent> <D-r> :CtrlPMRU<CR>
+        " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+        " let g:ctrlp_user_command = ['.hg', 'hg --cwd %s locate -I .']
+        " let g:ctrlp_user_command = ['.hg', '~/.vim/findreposfiles.sh %s']
+
         let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$\|\.hg$\|\.svn$',
             \ 'file': '\.exe$\|\.so$\|\.dll$' }
@@ -234,9 +243,9 @@ Bundle 'gmarik/vundle'
 
      " PythonMode {
      " Disable if python support not present
-        if !has('python')
-           let g:pymode = 1
-        endif
+        " if !has('python')
+        "    let g:pymode = 1
+        " endif
      " }
 
     
