@@ -11,8 +11,8 @@ tar xvfz virtualenv-$VIRTUAL_ENV_VERSION.tar.gz
 # create default local python env
 deactivate
 pushd virtualenv-$VIRTUAL_ENV_VERSION
-./virtualenv.py ~/$BASEDIR/env
-source ~/$BASEDIR/env/bin/activate
+./virtualenv.py $BASEDIR/env
+source $BASEDIR/env/bin/activate
 popd
 
 # install some basic pip packages
