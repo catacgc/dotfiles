@@ -22,6 +22,6 @@ pip install sh
 
 # start heavy lifting setup
 pushd $BASEDIR
-curl -sO https://raw.githubusercontent.com/catacgc/dotfiles/master/setup.py?`date +"%s"`
+curl -s https://raw.githubusercontent.com/catacgc/dotfiles/master/setup.py?`date +"%s"` -o setup.py
 python setup.py
 popd
