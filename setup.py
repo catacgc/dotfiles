@@ -37,6 +37,7 @@ def write_config(fname, config, label, sep=' ### '):
 if __name__ == '__main__':
     # vimrc
     download(".vimrc")
+    copy("~/.vimrc", "~/.vimrc.bk")
     copy(".vimrc", "~/.vimrc")
 
     # path settings
