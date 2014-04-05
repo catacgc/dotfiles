@@ -1,3 +1,5 @@
+#!/bin/bash
+
 BASEDIR=~/.env
 VIRTUAL_ENV_VERSION=1.9
 
