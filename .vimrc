@@ -29,10 +29,8 @@ set bs=indent,eol,start " Allow backspacing over everything in insert mode
 
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
-#set expandtab           " turn a tabs into spaces
 
 set fileformat=unix     " file mode is unix
-#set fileformats=unix,dos    " only detect unix file format, displays that ^M with dos files
 
 " system settings
 set lazyredraw          " no redraws in macros
@@ -64,7 +62,6 @@ filetype plugin indent on
 " file type specific settings
 if has("autocmd")
   " For debugging
-  #set verbose=9
 
   " if bash is sh.
   let bash_is_sh=1
