@@ -20,5 +20,6 @@ pip install sh
 
 # start heavy lifting setup
 pushd $BASEDIR
+curl -sO https://raw.githubusercontent.com/catacgc/dotfiles/master/setup.py
 python setup.py
 popd
