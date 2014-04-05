@@ -19,4 +19,6 @@ popd
 pip install sh
 
 # start heavy lifting setup
+pushd $BASEDIR
 python setup.py
+popd
