@@ -19,3 +19,4 @@ popd
 pip install sh
 
 # start heavy lifting setup
+python setup.py
