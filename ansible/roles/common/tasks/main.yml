@@ -1,4 +1,6 @@
 ---
+- include: virtual_env.yml
+
 -   name: Setup git
     template: src=.gitconfig dest=~/.gitconfig
 

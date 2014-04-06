@@ -1,0 +1,6 @@
+---
+- name: "Create setup template"
+  template: src=virtualenv_setup.sh dest=~/setup.sh
+
+- name: "Create virtual env"
+  shell: /bin/sh ~/setup.sh creates={{ basedir }}/env/bin/activate

@@ -1,5 +1,5 @@
-if [ -f /etc/bashrc ]; then                                                              │[ccostache@use-stagingpcs-3 ~]$ git glog^C
-  . /etc/bashrc                                                                        │[ccostache@use-stagingpcs-3 ~]$ Write failed: Broken pipe
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
 fi
 
 if [ -f ~/.bashrc.local ]; then
