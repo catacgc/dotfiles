@@ -19,6 +19,7 @@ popd
 
 # install ansible
 pip install ansible
+pip install markupsafe
 
 pushd $BASEDIR
 # pull git repo
