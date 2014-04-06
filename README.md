@@ -28,6 +28,6 @@ Run ansible:
 
 ````
 cd dotfiles/ansible
-ansible-playbook -i your_inventory_files site.yml --limit hostgroup
+ansible-playbook -i your_inventory_file site.yml --limit hostgroup
 ````
 
