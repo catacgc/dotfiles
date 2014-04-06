@@ -6,3 +6,4 @@
         - common
     vars:
         pip_packages: [ffind, sh]
+        basedir: ~/.env
