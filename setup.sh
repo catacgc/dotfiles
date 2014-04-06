@@ -17,7 +17,7 @@ pushd virtualenv-$VIRTUAL_ENV_VERSION
 source $BASEDIR/env/bin/activate
 popd
 
-# install some basic pip packages
+# install ansible
 pip install ansible
 
 pushd $BASEDIR

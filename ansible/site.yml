@@ -4,3 +4,5 @@
     sudo: no
     roles:
         - common
+    vars:
+        pip_packages: [ffind, sh]
