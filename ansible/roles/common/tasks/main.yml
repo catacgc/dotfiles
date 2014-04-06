@@ -1,3 +1,7 @@
 ---
--   name: Set git config properties
-    copy: src=gitconfig dest=~/.gitconfig
+-   name: Setup git
+    template: src=.gitconfig dest=~/.gitconfig
+-   name: Setup vim
+    template: src=.vimrc dest=~/.vimrc
+-   name: Setup bash
+    template: src=.bashrc dest=~/.bashrc

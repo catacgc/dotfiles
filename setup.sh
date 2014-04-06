@@ -18,7 +18,6 @@ source $BASEDIR/env/bin/activate
 popd
 
 # install some basic pip packages
-pip install sh
 pip install ansible
 
 pushd $BASEDIR
@@ -27,5 +26,5 @@ echo "localhost" > hosts
 ansible localhost -i hosts -m git -a "repo=https://github.com/catacgc/dotfiles.git dest=~/.env/dotfiles"
 
 # run full ansible recipies
-ansible-playbook -i hosts dotfiles/ansible/site.yml
+ansible-playbook -i hosts dotfiles/ansible/site.yml -e basedir=$BASEDIR
 popd
