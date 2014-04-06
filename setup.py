@@ -2,6 +2,20 @@ from sh import curl, ln, rm
 import shutil
 import os
 
+def setup():
+    # vimrc
+    download(".vimrc")
+    download(".gitconfig")
+    copy(".vimrc", "~/.vimrc")
+
+    # path settings
+    bashrc_config = [
+      "source " + fullpath("./env/bin/activate")
+    ]
+    write_config("~/.bashrc", bashrc_config, "Auto setup-up. DONT't change")
+    
+    
+
 def describe(f):
     def _d(*args, **kwargs):
         print "%s %s %s" % (f.__name__.capitalize(), ", ".join([str(arg) for arg in args]), kwargs)
@@ -35,14 +49,5 @@ def write_config(fname, config, label, sep=' ### '):
         f.writelines(result)
         
 if __name__ == '__main__':
-    # vimrc
-    download(".vimrc")
-    copy("~/.vimrc", "~/.vimrc.bk")
-    copy(".vimrc", "~/.vimrc")
-
-    # path settings
-    bashrc_config = [
-      "source " + fullpath("./env/bin/activate")
-    ]
-    write_config("~/.bashrc", bashrc_config, "Auto setup-up. DONT't change")
+    setup()
     
