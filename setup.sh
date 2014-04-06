@@ -23,7 +23,7 @@ pip install markupsafe
 
 pushd $BASEDIR
 # pull git repo
-echo "localhost" > hosts
+echo "localhost ansible_connection=local" > hosts
 ansible localhost -i hosts -m git -a "repo=https://github.com/catacgc/dotfiles.git dest=~/.env/dotfiles"
 
 # run full ansible recipies
