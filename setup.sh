@@ -19,9 +19,13 @@ popd
 
 # install some basic pip packages
 pip install sh
+pip install ansible
 
-# start heavy lifting setup
 pushd $BASEDIR
-curl -s https://raw.githubusercontent.com/catacgc/dotfiles/master/setup.py?`date +"%s"` -o setup.py
-python setup.py
+# pull git repo
+echo "localhost" > hosts
+ansible localhost -i hosts -m git -a "repo=https://github.com/catacgc/dotfiles.git dest=~/.env/dotfiles"
+
+# run full ansible recipies
+ansible-playbook -i hosts dotfiles/ansible/site.yml
 popd

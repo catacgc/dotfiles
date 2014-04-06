@@ -1,0 +1,6 @@
+---
+-   name: Setup local environement
+    hosts: all
+    sudo: no
+    roles:
+        - common

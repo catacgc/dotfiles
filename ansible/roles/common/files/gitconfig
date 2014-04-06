@@ -1,0 +1,71 @@
+[alias]
+    parents = log -1 HEAD
+    amend = commit --amend -C HEAD
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    sglog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    slog = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    ci = commit -v
+    co = checkout
+    st = status
+    sta = status -s
+    unstage = reset HEAD -- 
+    revert = co --
+    ff = "!f() { git checkout ${1:-""} && git merge --ff-only; }; f"
+    rollback = reset --soft HEAD^
+    standup = log --since yesterday --author costache
+    pull = pull --ff-only
+
+    # verbose outputs
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    move = "!f() { git checkout $2 && git branch -f $1 && git checkout $1; }; f"
+    sync = "!f() { echo Syncing with master && git checkout master && git pull --ff-only && git checkout ${1:-"-"} && git rebase master; }; f"
+	up = "!git remote update -p; git merge --ff-only @{u}"
+
+[color]
+	ui = true
+[core]
+    editor = vim
+	excludesfile = /Users/costache/.gitignore
+	autocrlf = input
+[ui]
+	username = Catalin Costache
+	email = costache@adobe.com
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+[push]
+	default = simple
+[user]
+	name = Catalin Costache
+    email = costache@adobe.com
+[url "https://"]
+	insteadOf = git://
+
+[rebase]
+    stat = True
+    autostash = True
+    autosquash = True
+
+[merge]
+    defaultToUpstream = true
+
+[url "https://"]
+    insteadOf = git://
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[rerere]
+	enabled = true
+
