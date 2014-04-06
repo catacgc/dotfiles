@@ -5,10 +5,11 @@ Sane, basic default configs for unix terminals for new users
 
 What's inside
 -------------
-Check https://github.com/catacgc/dotfiles/blob/master/ansible/roles/common/tasks/main.yml to see what are the tasks run
-Install virtualenv and activates it at each login (.bashrc)
-Install ffind, ack in this virtualenv
-Overwrites existing configs configs for: ~/.vimrc, ~/.gitconfig, ~/.bashrc
+
+- Check https://github.com/catacgc/dotfiles/blob/master/ansible/roles/common/tasks/main.yml to see what are the tasks run
+- Install virtualenv and activates it at each login (.bashrc)
+- Install ffind, ack in this virtualenv
+- Overwrites existing configs configs for: `~/.vimrc, ~/.gitconfig, ~/.bashrc`
 
 Setup on a single machine
 -------------------------
