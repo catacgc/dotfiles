@@ -1,7 +1,0 @@
----
--   name: Pull ansible recipies
-    hosts: all
-    sudo: no
-    tasks:
-        - name: Clone repo
-          git: repo=https://github.com/catacgc/dotfiles.git dest=~/.env/dotfiles
