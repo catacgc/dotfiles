@@ -24,8 +24,8 @@ pip install markupsafe
 pushd $BASEDIR
 # pull git repo
 echo "localhost ansible_connection=local" > hosts
-ansible localhost -i hosts -m git -a "repo=https://github.com/catacgc/dotfiles.git dest=~/.env/dotfiles"
+curl -L  https://github.com/catacgc/dotfiles/archive/master.tar.gz | tar -xz
 
 # run full ansible recipies
-ansible-playbook -i hosts dotfiles/ansible/site.yml -e basedir=$BASEDIR
+ansible-playbook -i hosts dotfiles-master/ansible/site.yml -e basedir=$BASEDIR
 popd
